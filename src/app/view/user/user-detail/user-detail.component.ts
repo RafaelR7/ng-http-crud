@@ -49,9 +49,11 @@ export class UserDetailComponent implements OnInit {
     if (this.isNew) {
       this.userService.addUser(this.form.value).subscribe(user => this.user = user);
       this.router.navigate(['/']);
+      location.reload(true);
     } else {
       this.userService.updateUser(this.form.value).subscribe(user => this.user);
       this.router.navigate(['/']);
+      location.reload(true);
     }
   }
 
