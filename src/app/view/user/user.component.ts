@@ -1,10 +1,9 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 
-import { DataService } from '../../service/data.service';
-import { User } from '../../model/user.model';
-import { UserService } from '../../service/user.service';
+import { DataService } from 'src/app/service/data.service';
+import { UserService } from 'src/app/service/user.service';
+import { User } from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-user',
@@ -13,45 +12,29 @@ import { UserService } from '../../service/user.service';
 })
 export class UserComponent implements OnInit {
 
-  form: FormGroup;
-  user: User;
-  isNew: boolean;
+  users$: Observable<User[]>;
 
   constructor(
-    private formBuilder: FormBuilder,
     private userService: UserService,
-    private dataService: DataService,
-    private router: Router
+    private dataService: DataService
   ) { }
 
   ngOnInit() {
-    this.user = this.dataService.getData();
-    if (this.user) {
-      this.isNew = false;
-      this.form = this.formBuilder.group({
-        name: [this.user.name],
-        username: [this.user.username],
-        email: [this.user.email],
-        id: [this.user.id]
-      });
-    } else {
-      this.isNew = true;
-      this.form = this.formBuilder.group({
-        name: [null],
-        username: [null],
-        email: [null]
-      });
-    }
+    this.users$ = this.userService.listUsers();
   }
 
-  onSubmit() {
-    if (this.isNew) {
-      this.userService.addUser(this.form.value).subscribe(user => this.user = user);
-      this.router.navigate(['/']);
-    } else {
-      this.userService.updateUser(this.form.value).subscribe(user => this.user);
-      this.router.navigate(['/']);
-    }
+  getUserId(id: number) {
+    console.log(id);
+  }
+
+  deleteUser(id: number) {
+    this.userService.deleteUser(id)
+    .subscribe(res => console.log(res));
+    location.reload(true);
+  }
+
+  editUser(user: User) {
+    this.dataService.setData(user);
   }
 
 }
