@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1 class="display-4">Home!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style</p>
+  <hr>
+  <button class="btn btn-primary" routerLink="/user">Add new User</button>
+</div>
+
+<div class="container">
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let user of users$ | async">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <i class="fas fa-edit green" routerLink="/user" (click)="editUser(user)"></i>&nbsp;&nbsp;
+        <i class="fas fa-trash-alt red" (click)="deleteUser(user.id)"></i>
+      </td>
+    </tr>
+  </table>
+</div>
