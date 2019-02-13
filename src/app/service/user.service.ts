@@ -21,6 +21,14 @@ export class UserService {
     );
   }
 
+  getUser(id: number): Observable<User> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<User>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.url, user)
     .pipe(

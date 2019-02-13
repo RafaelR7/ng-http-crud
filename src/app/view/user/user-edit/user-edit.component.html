@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1 class="display-4">Edit user</h1>
+  <hr>
+  <button class="btn btn-primary" routerLink="/">Return</button>
+</div>
+
+<div class="container">
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label for="name" class="control-label">Name</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" formControlName="name" id='name'>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label for="username" class="control-label">Username</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" formControlName="username" id='username'>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label for="name" class="control-label">Email</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="email" class="form-control" formControlName="email" id='email'>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { UserAddComponent } from './view/user/user-add/user-add.component';
 import { UserComponent } from './view/user/user.component';
-import { UserDetailComponent } from './view/user/user-detail/user-detail.component';
+import { UserEditComponent } from './view/user/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    UserDetailComponent
+    UserEditComponent,
+    UserAddComponent
   ],
   imports: [
     BrowserModule,

@@ -1,36 +1,6 @@
 {
   "users": [
     {
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
-      "username": "Antonette",
-      "email": "Shanna@melissa.tv"
-    },
-    {
-      "id": 3,
-      "name": "Clementine Bauch",
-      "username": "Samantha",
-      "email": "Nathan@yesenia.net"
-    },
-    {
-      "id": 4,
-      "name": "Patricia Lebsack",
-      "username": "Karianne",
-      "email": "Julianne.OConner@kory.org"
-    },
-    {
-      "id": 5,
-      "name": "Chelsey Dietrich",
-      "username": "Kamren",
-      "email": "Lucio_Hettinger@annie.ca"
-    },
-    {
       "id": 6,
       "name": "Mrs. Dennis Schulist",
       "username": "Leopoldo_Corkery",
@@ -59,6 +29,12 @@
       "username": "Moriah.Stanton",
       "email": "rey.Padberg@karina.biz",
       "id": 10
+    },
+    {
+      "name": "Rafael",
+      "username": "R7",
+      "email": "rafael@email.com",
+      "id": 11
     }
   ]
 }

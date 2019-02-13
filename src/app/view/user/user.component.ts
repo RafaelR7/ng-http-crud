@@ -1,7 +1,5 @@
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from 'src/app/service/data.service';
 import { UserService } from 'src/app/service/user.service';
 import { User } from 'src/app/model/user.model';
 
@@ -12,25 +10,24 @@ import { User } from 'src/app/model/user.model';
 })
 export class UserComponent implements OnInit {
 
-  users$: Observable<User[]>;
+  users = [];
 
   constructor(
     private userService: UserService,
-    private dataService: DataService
   ) { }
 
   ngOnInit() {
-    this.users$ = this.userService.listUsers();
+    this.getUsers();
   }
 
-  deleteUser(id: number) {
-    this.userService.deleteUser(id)
-    .subscribe(res => console.log(res));
-    location.reload(true);
+  getUsers() {
+    this.userService.listUsers()
+      .subscribe(users => this.users = users);
   }
 
-  editUser(user: User) {
-    this.dataService.setData(user);
+  deleteUser(user: User) {
+    this.userService.deleteUser(user.id)
+    .subscribe(res =>  this.users = this.users.filter(u => u !== user));
   }
 
 }
