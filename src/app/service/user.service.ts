@@ -16,9 +16,9 @@ export class UserService {
 
   listUsers() {
     return this.http.get<User[]>(this.url)
-    .pipe(
-      catchError(this.handleError)
-    );
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   getUser(id: number): Observable<User> {
@@ -31,9 +31,9 @@ export class UserService {
 
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.url, user)
-    .pipe(
-      catchError(this.handleError)
-    );
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   deleteUser (id: number): Observable<{}> {
@@ -45,9 +45,9 @@ export class UserService {
 
   updateUser(user: User): Observable<User> {
     return this.http.put<User>(this.getUserUrl(user.id), user)
-    .pipe(
-      catchError(this.handleError)
-    );
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -62,6 +62,6 @@ export class UserService {
   }
 
   private getUserUrl(id: number) {
-    return this.url + '/' + id;
+    return `${this.url}/${id}`;
   }
 }

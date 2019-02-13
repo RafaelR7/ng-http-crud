@@ -30,6 +30,6 @@
         <input type="email" class="form-control" formControlName="email" id='email'>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Update</button>
   </form>
 </div>

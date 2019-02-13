@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/service/user.service';
-
 
 @Component({
   selector: 'app-user-edit',
@@ -14,7 +12,6 @@ import { UserService } from 'src/app/service/user.service';
 export class UserEditComponent implements OnInit {
 
   form: FormGroup;
-  user: User;
 
   constructor(
     private formBuilder: FormBuilder,
