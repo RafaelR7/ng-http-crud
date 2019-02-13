@@ -1,12 +1,15 @@
 # LoginApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+Angular 7
+Bootsrap 4
+Json Server
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `json-server --watch db.json` for the json-server  Navigate to `http://localhost:3000/`.
+Run `json-server --watch db.json` for the json-server. Navigate to `http://localhost:3000/`.
 
 ## Code scaffolding
 
