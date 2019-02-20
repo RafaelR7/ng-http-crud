@@ -3,7 +3,7 @@
     <h1 class="display-4">Home!</h1>
     <p class="lead">This is a simple Http CRUD, run `json-server --watch db.json` to start the server</p>
     <hr>
-    <button class="btn btn-primary" routerLink="/userAdd">Add new User</button>
+    <button class="btn btn-primary" routerLink="/new">Add new User</button>
   </div>
 </div>
 
@@ -20,8 +20,7 @@
       <td>{{ user.username }}</td>
       <td>{{ user.email }}</td>
       <td>
-        <!-- Edit <i class="fas fa-edit green" routerLink="/users/{{user.id}}" ></i>&nbsp;&nbsp; -->
-        <a class="btn btn-success" routerLink="/users/{{user.id}}">
+        <a class="btn btn-success" routerLink="/user/{{user.id}}">
           Edit
           <i class="fas fa-edit"></i>
         </a>
